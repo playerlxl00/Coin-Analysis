@@ -1,0 +1,13 @@
+new_pair_monitor/
+│
+├── main.py                 # 程序入口
+├── config.py              # 配置文件
+├── monitors/
+│   ├── __init__.py
+│   ├── dex_monitor.py     # DexScreener监控
+│   └── etherscan_monitor.py # Etherscan查询
+├── utils/
+│   ├── __init__.py
+│   ├── logger.py          # 日志处理
+│   └── rate_limiter.py    # 请求频率控制
+└── requirements.txt       # 依赖包
