@@ -33,11 +33,7 @@ class Config:
         'min_holders': 100,                    # 最少持有者数量
         'max_renounced_percentage': 5,          # 最大放弃权限占比？
     }
-
-SCORING_PARAMS = {
-    'liquidity_weight': 0.4,      # 你觉得流动性最重要
-    'volume_weight': 0.1,          # 交易量不重要
-    'holder_weight': 0.3,          # 持有者分布很重要
-    'age_weight': 0.1,             
-    'verified_bonus': 0.1,
-}
+    # ==== 你问的新规则在这里配置 ====
+        'max_price_increase': 500,              # 最大允许涨幅500%
+        'min_volume_liquidity_ratio': 2,         # 最小交易量/流动性比
+    }
