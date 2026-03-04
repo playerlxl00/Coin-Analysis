@@ -33,3 +33,11 @@ class Config:
         'min_holders': 100,                    # 最少持有者数量
         'max_renounced_percentage': 5,          # 最大放弃权限占比？
     }
+
+SCORING_PARAMS = {
+    'liquidity_weight': 0.4,      # 你觉得流动性最重要
+    'volume_weight': 0.1,          # 交易量不重要
+    'holder_weight': 0.3,          # 持有者分布很重要
+    'age_weight': 0.1,             
+    'verified_bonus': 0.1,
+}
