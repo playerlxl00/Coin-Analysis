@@ -2,12 +2,19 @@ new_pair_monitor/
 │
 ├── main.py                 # 程序入口
 ├── config.py              # 配置文件
-├── monitors/
+│
+├── monitors/              # 监控模块
 │   ├── __init__.py
 │   ├── dex_monitor.py     # DexScreener监控
 │   └── etherscan_monitor.py # Etherscan查询
-├── utils/
+│
+├── analyzers/             # 分析模块（新增）
+│   ├── __init__.py
+│   └── token_analyzer.py  # 代币分析器（包含你问的那两个方法）
+│
+├── utils/                 # 工具模块
 │   ├── __init__.py
 │   ├── logger.py          # 日志处理
 │   └── rate_limiter.py    # 请求频率控制
+│
 └── requirements.txt       # 依赖包
