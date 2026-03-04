@@ -1,0 +1,26 @@
+# 核心依赖
+aiohttp>=3.8.0          # 异步HTTP请求
+asyncio>=3.4.3          # 异步IO支持
+
+# DexScreener相关
+dexscraper>=0.1.0       # DexScreener数据抓取
+
+# Etherscan相关
+# 使用requests进行HTTP请求（可选，我们主要用aiohttp）
+requests>=2.28.0        
+
+# 数据处理
+pandas>=1.5.0           # 数据分析（可选）
+numpy>=1.23.0           # 数值计算（可选）
+
+# 通知相关（可选）
+# python-telegram-bot>=20.0  # Telegram通知
+# web3>=6.0.0                # 直接与区块链交互
+
+# 开发和调试
+python-dotenv>=0.19.0   # 环境变量管理
+pytest>=7.0.0           # 单元测试
+black>=22.0.0           # 代码格式化
+
+# 使用方法：
+# pip install -r requirements.txt
