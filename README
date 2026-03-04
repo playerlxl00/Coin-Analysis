@@ -1,0 +1,141 @@
+# 🚀 New Pair Monitor
+
+A Python bot that monitors newly listed pairs on Ethereum via DexScreener, automatically fetches contract info from Etherscan, and analyzes tokens based on your custom rules.
+
+## 📺 What is this?
+
+This script does:
+1. **Real-time monitoring** of new Ethereum pairs on DexScreener
+2. **Auto-fetch** token contract info from Etherscan
+3. **Smart analysis** - scores tokens based on your rules
+4. **Alerts** when a token scores above your threshold
+
+## 🎯 Who is this for?
+
+- Traders who want to spot new tokens ASAP
+- People who want auto risk analysis on contracts
+- Devs interested in on-chain data
+
+## ⚙️ Installation
+
+### 1. Clone the project
+```bash
+git clone https://github.com/yourusername/new_pair_monitor.git
+cd new_pair_monitor
+
+2. Install dependencies
+pip install -r requirements.txt
+
+3. Get an API Key
+Sign up at Etherscan
+
+Go to your profile → API Keys → Create new key
+
+4. Configure
+Edit config.py and add your API key:
+
+ETHERSCAN_API_KEY = "YOUR_API_KEY_HERE"
+
+🎮 How to use
+Start monitoring
+
+python main.py
+
+What you'll see
+
+🚀 开始监控以太坊新币...
+
+🔍 发现新币: PEPE2.0
+  流动性: $45,678
+  24h交易量: $123,456
+
+📊 分析结果:
+  综合评分: 78.5/100
+  决策: ALERT
+  原因: 评分达到阈值
+
+⚙️ Configuration (config.py)
+You can tweak these parameters:
+
+# API Keys
+ETHERSCAN_API_KEY = "xxx"           # Your Etherscan API key
+
+# Filters
+MIN_LIQUIDITY = 10000                # Ignore pairs with less than $10k liquidity
+SCORE_THRESHOLD = 60                  # Alert when score > 60
+
+# Scoring weights (adjust how each factor matters)
+SCORING_PARAMS = {
+    'liquidity_weight': 0.3,          # How much liquidity matters (30%)
+    'volume_weight': 0.25,             # How much trading volume matters (25%)
+    'holder_weight': 0.2,              # How much holder distribution matters (20%)
+    'verified_bonus': 0.1,              # Bonus for verified contracts (10%)
+}
+
+# Rules
+CUSTOM_RULES = {
+    'avoid_high_concentration': True,   # Skip if top holders own too much
+    'prefer_verified_contracts': True,   # Prefer verified contracts
+    'min_holders': 100,                   # Minimum number of holders
+    'max_price_increase': 500,             # Max 500% price increase from open
+}
+📁 Project Structure
+
+new_pair_monitor/
+│
+├── main.py                 # Entry point - run this
+├── config.py               # All your settings here
+├── requirements.txt        # Dependencies
+├── README.md               # This file
+│
+├── monitors/               # Data collectors
+│   ├── dex_monitor.py      # DexScreener stuff
+│   └── etherscan_monitor.py # Etherscan stuff
+│
+├── analyzers/              # Analysis logic
+│   └── token_analyzer.py   # Scoring & rules
+│
+└── utils/                  # Helper tools
+    ├── logger.py           # Logging
+    └── rate_limiter.py     # Prevents API rate limits
+
+🚨 Important Notes
+Free Etherscan API: 5 calls/second limit. Don't go crazy.
+
+New tokens are risky: This tool helps, but DYOR (Do Your Own Research).
+
+Not financial advice: Just a tool to help you spot stuff faster.
+
+🐛 Troubleshooting
+"Module not found"
+
+pip install -r requirements.txt
+"Invalid API key"
+
+Check your config.py - did you paste the key correctly?
+
+Make sure you created a key on Etherscan website
+
+Nothing shows up
+
+Are there new pairs on Ethereum right now? Sometimes it's quiet.
+
+Check your internet connection
+
+📝 License
+MIT - Do whatever you want with it.
+
+☕ Support
+If this saved you from buying a scam coin, buy me a coffee: 0x... (your ETH address here)
+
+Made for people who hate missing good opportunities 🚀
+
+
+
+This README tells anyone (including future you) everything they need to know:
+- What the project does
+- How to set it up  
+- How to use it
+- How to customize it
+- Where each file is
+- What to do when it breaks
